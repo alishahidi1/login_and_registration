@@ -91,7 +91,53 @@ void registration(){
     main();
 }
 
+void forgot(){
+    int option;
+    system("cls");
+    cout<<"\t\t\t You forgot the password? \n";
+    cout<<"Enter 1 to search for your ID by your username"<<endl;
+    cout<<"Enter 2 to go back to the main menu"<<endl;
+    cout<<"Enter: ";
+    cin>>option;
 
+    switch (option)
+    {
+    case 1:{
+        int count = 0;
+        string suserID, sID, spass;
+        cout<<"\n\t\t Enter the username you can remember: ";
+        cin>>suserID;
+
+        ifstream f2("records.txt");
+        while(f2>>sID>>spass){
+            if (sID == suserID)
+            {
+                count=1;
+            }
+            
+        }
+        f2.close();
+        if (count == 1){
+            cout<<"\n\n Your account is found! \n";
+            cout<<"\n\n Your password is: "<<spass;
+            main();
+        }
+        else{
+            cout<<"\n\t Sorry! Your account is not found!\n";
+        }
+
+        break;
+    }
+    case 2:
+
+        main();
+        break;
+    
+    default:
+        cout<<"\t\t\t Wrong choice! Please try again "<<endl;
+        forgot();
+    }
+}
 
 
 
