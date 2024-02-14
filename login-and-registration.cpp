@@ -74,6 +74,13 @@ void login(){
     else{
         cout<<"\n Please check your username & password"<<endl;
     }
+}
 
-    
+void registration(){
+    string ruserID, rpassword, rid, rpass;
+    system("cls");
+    cout<<"\t\t\t Enter the username: ";
+    cin>>ruserID;
+    cout<<"Enter the password: ";
+    cin>>rpassword;
 }
