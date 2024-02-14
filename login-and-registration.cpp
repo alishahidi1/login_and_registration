@@ -83,4 +83,16 @@ void registration(){
     cin>>ruserID;
     cout<<"Enter the password: ";
     cin>>rpassword;
+
+    ofstream f1("records.txt", ios::app);
+    f1<<ruserID<<' '<<rpassword<<endl;
+    system("cls");
+    cout<<"\n\t\t\t Registration is successfull! \n";
+    main();
 }
+
+
+
+
+
+
